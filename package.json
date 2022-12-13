@@ -1,5 +1,5 @@
 {
-  "name": "stranger'sthings",
+  "name": "strangersthings",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,5 +27,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^5.3.4"
   }
 }

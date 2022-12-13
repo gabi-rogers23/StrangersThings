@@ -13,3 +13,6 @@
 
 
 export { default as Posts } from "./posts";
+export { default as Nav } from "./nav";
+export { default as Home } from "./home";
+export { default as LogIn} from "./logIn";
