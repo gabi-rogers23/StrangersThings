@@ -1,34 +1,47 @@
-import { React } from "react";
+import { React, useState } from "react";
 import ReactDOM from "react-dom";
 import { Home, LogIn, Posts, Feature } from "./components/exports";
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 
+
 const App = () => {
+
+  const [featuredItem, setFeaturedItem] = useState([]);
+
   return (
     <div>
-        <BrowserRouter>
+      <BrowserRouter>
         <header>
-        <h1>Stranger's Things!</h1>
-          <nav className = 'topNav'>
-            <NavLink exact to="/" activeClassName="topNavActive">Home</NavLink>
-            <NavLink to="/Login" activeClassName="topNavActive">Log In</NavLink>
-            <NavLink to="/Posts" activeClassName="topNavActive">Posts</NavLink>
+          <h1>Stranger's Things!</h1>
+          <nav className="topNav">
+            <NavLink exact to="/" activeClassName="topNavActive">
+              Home
+            </NavLink>
+            <NavLink to="/Login" activeClassName="topNavActive">
+              Log In
+            </NavLink>
+            <NavLink to="/Posts" activeClassName="topNavActive">
+              Posts
+            </NavLink>
           </nav>
-          </header>
-          <div className="content">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route  path="/LogIn">
-                <LogIn />
-              </Route>
-              <Route  path="/Posts">
-                <Posts />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
+        </header>
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/LogIn">
+              <LogIn />
+            </Route>
+            <Route path="/Posts">
+              <Posts featuredItem = {featuredItem} setFeaturedItem = {setFeaturedItem}/>
+            </Route>
+            <Route path= "/FeaturedPost">
+              <Feature featuredItem = {featuredItem}/>
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 };

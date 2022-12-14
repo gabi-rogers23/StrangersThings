@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllPosts } from "../api/api";
-import { Feature } from "./feature";
+import { useHistory } from "react-router-dom";
 
-const Posts = () => {
+const Posts = (props) => {
   const [allPosts, setAllPosts] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     Promise.all([fetchAllPosts()]).then(([allPostsResults]) => {
@@ -24,13 +25,16 @@ const Posts = () => {
           <input></input>
           <button>Search</button>
         </form>
-        <div>Want to see more? <a>Log In.</a></div>
       </div>
       <div className="postsList">
         {allPosts.map((el) => {
           return (
             <div key={el.title}>
-              <div className="postDescription">
+              <div className="postDescription" onClick = { async (event) => {
+                event.preventDefault();
+                  await props.setFeaturedItem(el);
+                  history.push("/FeaturedPost")
+              }}>
                 <h3>{el.title.toUpperCase()}</h3>
                 {el.description}
                 <ul>
