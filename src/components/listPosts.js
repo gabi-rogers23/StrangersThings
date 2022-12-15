@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllPosts } from "../api/api";
-import { useHistory } from "react-router-dom";
+import {Post} from "./exports"
 
-const Posts = (props) => {
+const ListPosts = (props) => {
   const [allPosts, setAllPosts] = useState([]);
-  const history = useHistory();
+  
 
   useEffect(() => {
     Promise.all([fetchAllPosts()]).then(([allPostsResults]) => {
@@ -29,21 +29,7 @@ const Posts = (props) => {
       <div className="postsList">
         {allPosts.map((el) => {
           return (
-            <div key={el.title}>
-              <div className="postDescription" onClick = { async (event) => {
-                event.preventDefault();
-                  await props.setFeaturedItem(el);
-                  history.push("/FeaturedPost")
-              }}>
-                <h3>{el.title.toUpperCase()}</h3>
-                {el.description}
-                <ul>
-                <li><b>Price:</b> {el.price} </li>
-                <li><b>Seller: </b> {el.author.username} </li>
-                <li><b>Location:</b> {el.location} </li>
-                </ul>
-              </div>
-            </div>
+            <Post el={el} setFeaturedItem={props.setFeaturedItem} key={el.title}/>
           );
         })}
       </div>
@@ -51,4 +37,4 @@ const Posts = (props) => {
   );
 };
 
-export default Posts;
+export default ListPosts;

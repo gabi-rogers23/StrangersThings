@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import ReactDOM from "react-dom";
-import { Home, LogIn, Posts, Feature } from "./components/exports";
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
+import { Home, LogIn, ListPosts, Feature, Nav } from "./components/exports";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [featuredItem, setFeaturedItem] = useState([]);
@@ -9,25 +9,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <header>
-          <div className="logo">ST</div>
-          <div className="centerHeader">
-          <div className="title">
-            STRANGER'S THINGS</div>
-            <div className="tagline"> TRASH   TO   TREASURE</div>
-          </div>
-          <nav className="topNav">
-            <NavLink exact to="/" activeClassName="topNavActive">
-              HOME
-            </NavLink>
-            <NavLink to="/Login" activeClassName="topNavActive">
-              LOG IN
-            </NavLink>
-            <NavLink to="/Posts" activeClassName="topNavActive">
-              POSTS
-            </NavLink>
-          </nav>
-        </header>
+        <Nav />
         <div className="content">
           <Switch>
             <Route exact path="/">
@@ -37,7 +19,7 @@ const App = () => {
               <LogIn />
             </Route>
             <Route path="/Posts">
-              <Posts
+              <ListPosts
                 featuredItem={featuredItem}
                 setFeaturedItem={setFeaturedItem}
               />
