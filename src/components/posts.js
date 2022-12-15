@@ -38,9 +38,9 @@ const Posts = (props) => {
                 <h3>{el.title.toUpperCase()}</h3>
                 {el.description}
                 <ul>
-                <li><b>Price:</b> {el.price}</li>
-                <li><b>Seller: </b>{el.author.username}</li>
-                <li><b>Location:</b> {el.location}</li>
+                <li><b>Price:</b> {el.price} </li>
+                <li><b>Seller: </b> {el.author.username} </li>
+                <li><b>Location:</b> {el.location} </li>
                 </ul>
               </div>
             </div>

@@ -1,5 +1,8 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Red+Hat+Display:wght@300&family=Roboto+Condensed&family=Ubuntu:wght@500&display=swap');
+
+*{
     box-sizing: border-box;
+    font-family: Epilogue;
   }
 
 body {
@@ -14,20 +17,46 @@ header {
     flex-flow: row wrap;
     justify-content: space-between;
     width: 1020px;
-    height: 100px;
-    border: 1px solid black;
+    height: 150px;
+    border: 3px solid black;
+}
+
+.logo {
+    font-size: 95px;
+    padding-left: 35px;
+    width: 150px;    
+    height: 147px;
+    border-right: 3px solid black;
+    letter-spacing: -19px;
+    padding-top: 20px;
+    font-family: Roboto Condensed;
 }
 
 .content {
     display: flex;
     flex-flow: column wrap;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     align-items: center;
     justify-content: space-around;
 }
 
-h1 {
-    margin: 25px;
+.centerHeader {
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: Roboto Condensed;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-size: 65px;
+    margin-top: 40px;
+}
+
+.tagline {
+    font-size: 18px;
+    margin-top: 5px;
 }
 
 h3 {
@@ -47,24 +76,62 @@ ul {
 /* ****** NAV ****** */
 .topNav {
     display: flex;
-    flex-wrap: column wrap;
-    width: 150px;
+    flex-flow: column;
+    width: 150px;    
+    height: 147px;
     align-items: center;
-    justify-content: space-between;
-    margin-right: 15px;
-    /* border: 2px solid red;  */
+    justify-content: space-evenly;
+    border-left: 3px solid black; 
+    font-family: Roboto Condensed;
 }
 
 .topNavActive {
     color: teal;
-    font-weight: bold;
+    border-bottom: 1px solid teal;
+}
+
+.container {
+    /* background-color: lightseagreen; */
+    /* border: 2px solid black; */
+    width: 1020px;
+    height: 1020px;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 /* ****** HOME ****** */
-.h1Home {
-    background-color: lightseagreen;
-    color: white;
-    padding: 25px;
+
+.homeLeftSqare {
+    height: 700px;
+    Width: 700px;
+    font-size: xx-small;
+}
+
+.homeLeftSqare img {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    height: 700px;
+    width: 700px
+}
+
+.homeLeftSqare a {
+    font-size: xx-small
+}
+
+.homeRightSide {
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    height: 700px; 
+    width: 320px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    padding: 10px;
+}
+.homeColumn {
+    font-size: small;
+    padding: 20px;
 }
 
 /* ****** POSTS ****** */
@@ -97,6 +164,7 @@ ul {
     width: fit-content;
     margin-left: 325px;
 }
+
 .postSearch {
     height: fit-content;
     width: fit-content;
