@@ -22,21 +22,25 @@ const LogIn = (props) => {
           <br />
         </div>
         <div>
-          PASSWORD:<input requred value={props.password} onChange={(event) =>{
+          PASSWORD:<input required type="password" value={props.password} onChange={(event) =>{
             event.preventDefault();
             console.log("login Password " + event.target.value)
             props.setPassword(event.target.value)
           }}></input>
         </div>
-        <button onClick={async (event) => {
+        <div className="logInButton"><button onClick={async (event) => {
             event.preventDefault();
             await logIn(props.username, props.password)
             props.setUsername("");
             props.setPassword("");
-        }}>Enter</button>
+            if (localStorage.getItem("auth_token") != null){
+                props.setIsLoggedIn(true);
+                history.push("/userAccount")
+            }
+        }}>Enter</button></div>
       </form>
-      <br />
-      <div>
+     
+      <div className="logInUserQ">
         Not already a user? <br />
         <button
           className="logInCreateAccount"

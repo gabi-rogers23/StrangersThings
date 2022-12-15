@@ -1,6 +1,14 @@
 import { React, useState } from "react";
 import ReactDOM from "react-dom";
-import { Home, LogIn, ListPosts, Feature, Nav, Register } from "./components/exports";
+import {
+  Home,
+  LogIn,
+  ListPosts,
+  Feature,
+  Nav,
+  Register,
+  UserAccount,
+} from "./components/exports";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
@@ -12,14 +20,21 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <Nav />
+        <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
             <Route path="/logIn">
-              <LogIn username={username} setUsername={setUsername} password={password} setPassword={setPassword} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+              <LogIn
+                username={username}
+                setUsername={setUsername}
+                password={password}
+                setPassword={setPassword}
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+              />
             </Route>
             <Route path="/posts">
               <ListPosts
@@ -31,7 +46,15 @@ const App = () => {
               <Feature featuredItem={featuredItem} />
             </Route>
             <Route path="/register">
-              <Register username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
+              <Register
+                username={username}
+                setUsername={setUsername}
+                password={password}
+                setPassword={setPassword}
+              />
+            </Route>
+            <Route path="/userAccount">
+              <UserAccount />
             </Route>
           </Switch>
         </div>

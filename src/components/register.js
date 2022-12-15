@@ -1,7 +1,7 @@
 import React from "react";
 import {registerNewUser} from "../api/api"
 
-const Register = () => {
+const Register = (props) => {
 
     return (
         <div className="container">

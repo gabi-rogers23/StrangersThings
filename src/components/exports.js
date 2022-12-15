@@ -18,3 +18,4 @@ export { default as Home } from "./home";
 export { default as LogIn} from "./logIn";
 export { default as Feature } from "./feature";
 export { default as Register } from "./register";
+export { default as UserAccount } from "./userAccount";

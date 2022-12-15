@@ -1,6 +1,7 @@
 export const BASE_URL =
   "https://strangers-things.herokuapp.com/api/2209-ftb-ct-web-pt";
 
+
 export async function fetchAllPosts() {
   try {
     const res = await fetch(`${BASE_URL}/posts`);
@@ -45,12 +46,13 @@ export async function logIn(userUsername, userPassword) {
     });
     const data = await res.json();
     localStorage.setItem("auth_token", data.data.token);
-    console.log("Login Data" + data);
-    return(console.log("You have Logged In!"))
+    console.log("Login Data" + data.data);
+   (console.log(getHeaders()))
   } catch (error) {
     throw error;
   }
 };
+
 
 function getHeaders() {
   let headers = {
@@ -60,6 +62,6 @@ function getHeaders() {
   if (currentToken != null) {
     headers ["Authorization"] = "Bearer " + currentToken
   }
-  console.log("Current Headers: " + headers.JSON.stringify())
+  console.log("Current Headers: " + headers)
   return headers
 }
