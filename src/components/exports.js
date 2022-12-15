@@ -17,3 +17,4 @@ export { default as Post } from "./post"
 export { default as Home } from "./home";
 export { default as LogIn} from "./logIn";
 export { default as Feature } from "./feature";
+export { default as Register } from "./register";

@@ -73,6 +73,15 @@ ul {
     list-style: none
 }
 
+.container {
+    /* background-color: lightseagreen; */
+    border: 2px solid black;
+    width: 1020px;
+    height: 700px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
 /* ****** NAV ****** */
 .topNav {
     display: flex;
@@ -90,14 +99,6 @@ ul {
     border-bottom: 1px solid teal;
 }
 
-.container {
-    /* background-color: lightseagreen; */
-    /* border: 2px solid black; */
-    width: 1020px;
-    height: 1020px;
-    display: flex;
-    flex-flow: column wrap;
-}
 
 /* ****** HOME ****** */
 
@@ -109,10 +110,8 @@ ul {
 
 .homeLeftSqare img {
     border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    border-left: 2px solid black;
-    height: 700px;
-    width: 700px
+    height: 696px;
+    width: 696px;
 }
 
 .homeLeftSqare a {
@@ -120,8 +119,6 @@ ul {
 }
 
 .homeRightSide {
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
     height: 700px; 
     width: 320px;
     text-align: center;
@@ -169,4 +166,20 @@ ul {
     height: fit-content;
     width: fit-content;
     margin-right: 15px;
+}
+
+/* ****** LOG IN ****** */
+
+.logInTitle {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 50px;
+}
+
+.logInForm {
+    margin-left: 20px;
+}
+
+.logInCreateAccount:hover {
+    color: teal;
 }

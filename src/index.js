@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import ReactDOM from "react-dom";
-import { Home, LogIn, ListPosts, Feature, Nav } from "./components/exports";
+import { Home, LogIn, ListPosts, Feature, Nav, Register } from "./components/exports";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
@@ -15,17 +15,20 @@ const App = () => {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/LogIn">
+            <Route path="/logIn">
               <LogIn />
             </Route>
-            <Route path="/Posts">
+            <Route path="/posts">
               <ListPosts
                 featuredItem={featuredItem}
                 setFeaturedItem={setFeaturedItem}
               />
             </Route>
-            <Route path="/FeaturedPost">
+            <Route path="/featuredPost">
               <Feature featuredItem={featuredItem} />
+            </Route>
+            <Route path="/register">
+              <Register />
             </Route>
           </Switch>
         </div>

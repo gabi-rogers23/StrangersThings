@@ -1,18 +1,34 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 const LogIn = () => {
-    return (
+  const history = useHistory();
+  return (
+    <div className="container">
+      <div className="logInTitle"> Log In! </div>
+      <form className="logInForm">
         <div>
-            Log In!
-            <form>
-                <div>Username:<input></input></div>
-                <div>Password:<input></input></div>
-                <button>Enter</button>
-            </form>
+          Username:<input></input>
         </div>
-    )
-}
+        <div>
+          Password:<input></input>
+        </div>
+        <button>Enter</button>
+      </form>
+      <br />
+      <div>
+        Not already a user? <br />{" "}
+        <button className="logInCreateAccount"
+          onClick={(event) => {
+            event.preventDefault();
+            history.push("/register");
+          }}
+        >
+          Create an account.
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default LogIn;
