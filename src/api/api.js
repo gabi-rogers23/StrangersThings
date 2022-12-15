@@ -30,7 +30,27 @@ export async function registerNewUser(newUserName, newPassword) {
   } catch (error) {
     throw error;
   }
-}
+};
+
+export async function logIn(userUsername, userPassword) {
+  const sendData = {
+    user: {username: userUsername, password: userPassword},
+  };
+  console.log("LogIn Data" + sendData)
+  try {
+    const res = await fetch(`${BASE_URL}/users/login`, {
+      headers: getHeaders(),
+      method: "POST",
+      body: JSON.stringify(sendData),
+    });
+    const data = await res.json();
+    localStorage.setItem("auth_token", data.data.token);
+    console.log("Login Data" + data);
+    return(console.log("You have Logged In!"))
+  } catch (error) {
+    throw error;
+  }
+};
 
 function getHeaders() {
   let headers = {
@@ -38,8 +58,8 @@ function getHeaders() {
   }
   const currentToken = localStorage.getItem("auth_token")
   if (currentToken != null) {
-    headers.Authorization = currentToken
+    headers ["Authorization"] = "Bearer " + currentToken
   }
-  console.log("Current Headers: " + headers)
+  console.log("Current Headers: " + headers.JSON.stringify())
   return headers
 }

@@ -5,6 +5,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [featuredItem, setFeaturedItem] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
@@ -16,7 +19,7 @@ const App = () => {
               <Home />
             </Route>
             <Route path="/logIn">
-              <LogIn />
+              <LogIn username={username} setUsername={setUsername} password={password} setPassword={setPassword} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
             </Route>
             <Route path="/posts">
               <ListPosts
@@ -28,7 +31,7 @@ const App = () => {
               <Feature featuredItem={featuredItem} />
             </Route>
             <Route path="/register">
-              <Register />
+              <Register username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
             </Route>
           </Switch>
         </div>
