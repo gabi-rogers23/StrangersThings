@@ -7,13 +7,16 @@ import {
   Feature,
   Nav,
   Register,
-  UserAccount,
+  Profile,
+  NewPostForm,
 } from "./components/exports";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
   const [featuredItem, setFeaturedItem] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("auth_token")
+  );
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,8 +56,11 @@ const App = () => {
                 setPassword={setPassword}
               />
             </Route>
-            <Route path="/userAccount">
-              <UserAccount />
+            <Route path="/profile">
+              <Profile username={username} />
+            </Route>
+            <Route path="/newPostForm">
+              <NewPostForm />
             </Route>
           </Switch>
         </div>

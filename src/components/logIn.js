@@ -30,18 +30,18 @@ const LogIn = (props) => {
         </div>
         <div className="logInButton"><button onClick={async (event) => {
             event.preventDefault();
-            await logIn(props.username, props.password)
+            await logIn(props.username, props.password);
             props.setUsername("");
             props.setPassword("");
             if (localStorage.getItem("auth_token") != null){
                 props.setIsLoggedIn(true);
-                history.push("/userAccount")
+                history.push("/profile")
             }
         }}>Enter</button></div>
       </form>
      
       <div className="logInUserQ">
-        Not already a user? <br />
+        Not already a user? <p />
         <button
           className="logInCreateAccount"
           onClick={(event) => {
@@ -49,7 +49,7 @@ const LogIn = (props) => {
             history.push("/register");
           }}
         >
-          Create an account.
+          Create an Account
         </button>
       </div>
     </div>

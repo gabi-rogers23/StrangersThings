@@ -28,7 +28,7 @@ const Home = () => {
             >
               Log In
             </button>
-            <p/>- or -<p />{" "}
+            <p/>- or -<p/>
             <button
               onClick={(event) => {
                 event.preventDefault();
@@ -41,11 +41,11 @@ const Home = () => {
         </div>
       </div>
       <div className="photoCredit">
-        Photo by{" "}
+        Photo by
         <a href="https://unsplash.com/es/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
           Joanna Kosinska
-        </a>{" "}
-        on{" "}
+        </a>
+        on
         <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
           Unsplash
         </a>

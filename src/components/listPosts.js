@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllPosts } from "../api/api";
-import {Post} from "./exports"
+import { Post } from "./exports";
 
 const ListPosts = (props) => {
   const [allPosts, setAllPosts] = useState([]);
-  
 
   useEffect(() => {
     Promise.all([fetchAllPosts()]).then(([allPostsResults]) => {
@@ -18,18 +17,20 @@ const ListPosts = (props) => {
   }, []);
 
   return (
-    <div>
-      <div className="postsTop">
-        <h2 className="postFeed">Post Feed</h2>
-        <form className="postSearch">
-          <input></input>
-          <button>Search</button>
-        </form>
-      </div>
+    <div className="container">
+      <div className="subHeader">Post Feed</div>
+      <form className="postSearch">
+        <input></input>
+        <button>Search</button>
+      </form>
       <div className="postsList">
         {allPosts.map((el) => {
           return (
-            <Post el={el} setFeaturedItem={props.setFeaturedItem} key={el.title}/>
+            <Post
+              el={el}
+              setFeaturedItem={props.setFeaturedItem}
+              key={el.title}
+            />
           );
         })}
       </div>

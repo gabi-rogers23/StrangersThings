@@ -1,6 +1,6 @@
 import { React } from "react";
 import { NavLink } from "react-router-dom";
-import UserAccount from "./userAccount";
+
 
 const App = (props) => {
   return (
@@ -15,24 +15,24 @@ const App = (props) => {
           HOME
         </NavLink>
 
-        {props.isLoggedIn ? (
+        {localStorage.getItem("auth_token") ? (
           <><NavLink to="/Login" activeClassName="topNavActive" onClick={()=>{
             console.log("Logged In " + props.isLoggedIn)
             props.setIsLoggedIn(false)
+            localStorage.clear();
             console.log("Logged In after Log Out Click " + props.isLoggedIn)
           }}>
             LOG OUT
           </NavLink>
 
-          <NavLink to ="/userAccount" activeClassName="topNavActive">
-            USER ACCOUNT
+          <NavLink to ="/profile" activeClassName="topNavActive">
+            PROFILE
           </NavLink></>
         ) : (
           <NavLink to="/Login" activeClassName="topNavActive">
             LOG IN
           </NavLink>
         )}
-
         <NavLink to="/Posts" activeClassName="topNavActive">
           POSTS
         </NavLink>

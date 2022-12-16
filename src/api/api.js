@@ -4,10 +4,36 @@ export const BASE_URL =
 
 export async function fetchAllPosts() {
   try {
-    const res = await fetch(`${BASE_URL}/posts`);
+    const res = await fetch(`${BASE_URL}/posts`, {
+      headers: getHeaders(),
+    });
     const data = await res.json();
 
     return data.data.posts;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function addPost(newTitle, newDescription, newPrice, newLocation, willDeliver) {
+  const sendData = {
+    post: {
+      title: newTitle,
+      description: newDescription,
+      price: newPrice,
+      location: newLocation,
+      willDeliver: willDeliver
+    }
+  }
+  
+  try {
+    const res = await fetch(`${BASE_URL}/posts`, {
+      headers: getHeaders(),
+      method: "POST",
+      body: JSON.stringify(sendData),
+    })
+    const data = await res.json();
+    console.log(data)
   } catch (error) {
     throw error;
   }
