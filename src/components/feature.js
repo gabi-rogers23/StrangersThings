@@ -6,18 +6,20 @@ const Feature = (props) => {
   const history = useHistory();
   
   return (
-    <div>
-      <h3>{props.featuredItem.title}</h3>
-      <div>Description:  {props.featuredItem.description}</div>
-      <div>Price:  {props.featuredItem.price}</div>
-      <div>Location:  {props.featuredItem.location}</div>
-      <div>Seller:  {props.featuredItem.author.username}</div>
+    <div className="container">
+      <div className="subHeader">{props.featuredItem.title.toUpperCase()}</div>
+      <ul>
+      <li> <b>Description:</b>  {props.featuredItem.description}</li>
+      <li> <b>Price:</b>  {props.featuredItem.price}</li>
+      <li> <b>Location:</b>  {props.featuredItem.location}</li>
+      <li> <b>Seller:</b>  {props.featuredItem.author.username}</li>
+      </ul>
       <br/>
       
       <button
         onClick={(event) => {
           event.preventDefault();
-          history.push("/Posts");
+          history.goBack();
         }}
       >
         Back to Posts

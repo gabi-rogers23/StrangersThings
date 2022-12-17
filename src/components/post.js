@@ -18,13 +18,13 @@ const Post = (props) => {
         {props.el.description}
         <ul>
           <li>
-            <b>Price:</b> {props.el.price}{" "}
+            <b>Price:</b> {props.el.price}
           </li>
           <li>
-            <b>Seller: </b> {props.el.author.username}{" "}
+            <b>Seller: </b> {props.el.author.username}
           </li>
           <li>
-            <b>Location:</b> {props.el.location}{" "}
+            <b>Location:</b> {props.el.location}
           </li>
         </ul>
         {props.currentUser === props.el.author ? (<><button>DELETE</button><button>EDIT</button></>) : (null)}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { getProfile } from "../api/api";
-import { Post } from "./exports";
+import { Post, Messages } from "./exports";
 
 const Profile = (props) => {
   const [profileInfo, setProfileInfo] = useState({
@@ -26,8 +26,9 @@ const Profile = (props) => {
   return (
     <div className="container">
       <div className="subHeader">
-        Welcome to Your Profile {profileInfo.username}
+        Welcome to Your Profile {profileInfo.username}!
       </div>
+      <img className="cube" src="/Images/cube.png"></img>
       <button
         onClick={(event) => {
           event.preventDefault();
@@ -50,10 +51,7 @@ const Profile = (props) => {
           <div className="profileInfo">
             {profileInfo.messages.map((el) => {
               return (
-                <div>
-                  <div>From: {el.fromUser.username}</div>
-                  <div>{el.content}</div>
-                </div>
+                <Messages el={el} key={el._id} />
               );
             })}
           </div>

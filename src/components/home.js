@@ -12,7 +12,7 @@ const Home = () => {
         <div className="homeRightSide">
           
           <p>Welcome to Stranger's Things!</p>
-          <img src="/Images/cube.png"></img>
+          <img className="cube" src="/Images/cube.png"></img>
           <div className="homeColumn">
             <b>Buy. Sell. Repeat. </b>
             <p className="homeParagraph">
