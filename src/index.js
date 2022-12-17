@@ -54,10 +54,12 @@ const App = () => {
                 setUsername={setUsername}
                 password={password}
                 setPassword={setPassword}
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
               />
             </Route>
             <Route path="/profile">
-              <Profile username={username} />
+              <Profile setFeaturedItem={setFeaturedItem} />
             </Route>
             <Route path="/newPostForm">
               <NewPostForm />

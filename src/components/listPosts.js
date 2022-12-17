@@ -29,7 +29,7 @@ const ListPosts = (props) => {
             <Post
               el={el}
               setFeaturedItem={props.setFeaturedItem}
-              key={el.title}
+              key={el._id}
             />
           );
         })}

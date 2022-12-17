@@ -27,6 +27,7 @@ const Post = (props) => {
             <b>Location:</b> {props.el.location}{" "}
           </li>
         </ul>
+        {props.currentUser === props.el.author ? (<><button>DELETE</button><button>EDIT</button></>) : (null)}
       </div>
     </div>
   );

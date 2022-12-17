@@ -1,6 +1,17 @@
 export const BASE_URL =
   "https://strangers-things.herokuapp.com/api/2209-ftb-ct-web-pt";
 
+  function getHeaders() {
+    let headers = {
+      "Content-Type": "application/json"
+    }
+    const currentToken = localStorage.getItem("auth_token")
+    if (currentToken != null) {
+      headers ["Authorization"] = "Bearer " + currentToken
+    }
+    console.log("Current Headers: " + JSON.stringify(headers))
+    return headers
+  }
 
 export async function fetchAllPosts() {
   try {
@@ -15,14 +26,14 @@ export async function fetchAllPosts() {
   }
 }
 
-export async function addPost(newTitle, newDescription, newPrice, newLocation, willDeliver) {
+export async function addPost(newTitle, newDescription, newPrice, newLocation, newWillDeliver) {
   const sendData = {
     post: {
       title: newTitle,
       description: newDescription,
       price: newPrice,
       location: newLocation,
-      willDeliver: willDeliver
+      willDeliver: newWillDeliver
     }
   }
   
@@ -80,14 +91,16 @@ export async function logIn(userUsername, userPassword) {
 };
 
 
-function getHeaders() {
-  let headers = {
-    "Content-Type": "application/json"
+export async function getProfile() {
+  try {
+    const res = await fetch(`${BASE_URL}/users/me`, {
+      headers: getHeaders(),
+      method: "GET",
+    });
+    const data = await res.json();
+    console.log(data.data.posts)
+    return data.data
+  }catch(error) {
+    throw error;
   }
-  const currentToken = localStorage.getItem("auth_token")
-  if (currentToken != null) {
-    headers ["Authorization"] = "Bearer " + currentToken
-  }
-  console.log("Current Headers: " + headers)
-  return headers
 }

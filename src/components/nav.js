@@ -20,7 +20,7 @@ const App = (props) => {
             console.log("Logged In " + props.isLoggedIn)
             props.setIsLoggedIn(false)
             localStorage.clear();
-            console.log("Logged In after Log Out Click " + props.isLoggedIn)
+            console.log("Log Out Click " + props.isLoggedIn)
           }}>
             LOG OUT
           </NavLink>

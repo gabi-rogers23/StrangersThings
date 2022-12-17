@@ -13,6 +13,7 @@ const Feature = (props) => {
       <div>Location:  {props.featuredItem.location}</div>
       <div>Seller:  {props.featuredItem.author.username}</div>
       <br/>
+      
       <button
         onClick={(event) => {
           event.preventDefault();

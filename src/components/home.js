@@ -13,7 +13,7 @@ const Home = () => {
           
           <p>Welcome to Stranger's Things!</p>
           <img src="/Images/cube.png"></img>
-          <p className="homeColumn">
+          <div className="homeColumn">
             <b>Buy. Sell. Repeat. </b>
             <p className="homeParagraph">
               Here at Stranger's Things you can buy and sell any item you wish!
@@ -37,7 +37,7 @@ const Home = () => {
             >
               Create an Account!
             </button>
-          </p>
+          </div>
         </div>
       </div>
       <div className="photoCredit">
