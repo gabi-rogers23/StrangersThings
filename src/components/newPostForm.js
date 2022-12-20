@@ -1,4 +1,5 @@
-import react, { useState } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { addPost } from "../api/api";
 
 const NewPostForm = () => {
@@ -7,6 +8,8 @@ const NewPostForm = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [deliver, setDeliver] = useState(false);
+
+  const history = useHistory();
 
   return (
     <div className="container">
@@ -71,6 +74,7 @@ const NewPostForm = () => {
             setPrice("");
             setLocation("");
             setDeliver(false);
+            history.goBack()
           }}
         >
           ENTER

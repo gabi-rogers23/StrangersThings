@@ -16,6 +16,7 @@ const MessageForm = (props) => {
       <div>Subject: {props.featuredItem.title} </div> <br />
       <form className="messageForm" value={messageContent}>
         <input
+          required
           placeholder="Type message here..."
           className="messageInput"
           onChange={(event)=>{

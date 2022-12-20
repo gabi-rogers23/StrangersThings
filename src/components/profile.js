@@ -49,7 +49,7 @@ const Profile = (props) => {
           </button>
           <div className="profileInfo">
             {profileInfo.messages.map((el) => {
-              return <Messages el={el} key={el._id} />;
+              return <Messages el={el} key={el._id} currentUserIsAuthor={el.fromUser._id === profileInfo._id}/>;
             })}
           </div>
         </>
@@ -61,7 +61,7 @@ const Profile = (props) => {
               setViewMessages(true);
             }}
           >
-            Messages
+            MESSAGES
           </button>
           <div className="profileInfo">
             {profileInfo.posts.map((el) => {
@@ -71,7 +71,16 @@ const Profile = (props) => {
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
                   currentUserIsAuthor={true}
-                  
+                  onDelete={() => {
+                    getProfile().then((profileResults) => {
+                      try {
+                        console.log(profileResults);
+                        setProfileInfo(profileResults);
+                      } catch (error) {
+                        console.error("Uh oh! Problems with Profile Promises");
+                      }
+                    });
+                  }}
                 />
               );
             })}

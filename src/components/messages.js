@@ -5,7 +5,7 @@ const Messages = (props) => {
         <div className="message">
         <ul>
         <li>{props.el.post.title}</li>    
-        <li>From: {props.el.fromUser.username}</li>
+        <li> Sent From {props.currentUserIsAuthor ? "ME" : ":  " + props.el.fromUser.username}</li>
         <li>{props.el.content}</li>
         </ul>
       </div>

@@ -24,7 +24,7 @@ const Post = (props) => {
                 <b>Price:</b> {props.el.price}
               </li>
               <li>
-                <b>Seller:</b>
+                <b>Seller: </b>
                 {props.currentUserIsAuthor ? "ME" : props.el.author.username}
               </li>
               <li>
@@ -36,15 +36,17 @@ const Post = (props) => {
             <>
               <button
                 onClick={async (event) => {
+                  console.log("DELETE CLICKED");
                   event.preventDefault();
-                  await deletePost();
+                  await deletePost(props.el._id);
+                  props.onDelete();
                 }}
               >
                 DELETE
               </button>
               <button>EDIT</button>
             </>
-          ) : (
+          ) : localStorage.getItem("auth_token") ? (
             <button
               onClick={(event) => {
                 event.preventDefault();
@@ -52,8 +54,10 @@ const Post = (props) => {
                 props.setFeaturedItem(props.el);
                 history.push("/MessageForm");
               }}
-            > MESSAGE </button>
-          )}
+            >
+              MESSAGE
+            </button>
+          ) : null}
         </div>
       ) : (
         ""
