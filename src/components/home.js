@@ -41,7 +41,7 @@ const Home = () => {
         </div>
       </div>
       <div className="photoCredit">
-        Photo by
+        Photo by 
         <a href="https://unsplash.com/es/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
           Joanna Kosinska
         </a>

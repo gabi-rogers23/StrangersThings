@@ -74,6 +74,7 @@ const Profile = (props) => {
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
                   currentUser={profileInfo._id}
+                  username = {"ME"}
                 />
               );
             })}

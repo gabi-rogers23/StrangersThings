@@ -53,7 +53,6 @@ const NewPostForm = () => {
         <p />
         <label htmlFor="willDeliver">DELIVER: </label>
         <input
-          required
           type="checkbox"
           checked={deliver}
           name="willDeliver"
@@ -67,11 +66,11 @@ const NewPostForm = () => {
           onClick={async (event) => {
             event.preventDefault();
             await addPost(title, description, price, location, deliver);
-            setTitle("")
-            setDescription("")
-            setPrice("")
-            setLocation("")
-            setDeliver(false)
+            setTitle("");
+            setDescription("");
+            setPrice("");
+            setLocation("");
+            setDeliver(false);
           }}
         >
           ENTER

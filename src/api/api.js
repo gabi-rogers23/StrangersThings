@@ -104,3 +104,16 @@ export async function getProfile() {
     throw error;
   }
 }
+
+export async function deletePost(POST_ID) {
+  try {
+    const res = await fetch(`${BASE_URL}/posts/${POST_ID}`, {
+    method: "DELETE",
+    headers: getHeaders()
+    });
+    const data = await res.json();
+    console.log(data.success)
+  }catch(error) {
+    throw error;
+  }
+}
