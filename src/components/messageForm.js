@@ -33,6 +33,10 @@ const MessageForm = (props) => {
             history.goBack();
           }}>SEND</button>
         </p>
+        <button onClick={(event) => {
+          event.preventDefault();
+          history.goBack()
+        }}>BACK</button>
       </form>
     </div>
   );

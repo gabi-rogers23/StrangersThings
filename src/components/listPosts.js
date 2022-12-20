@@ -5,7 +5,9 @@ import { Post } from "./exports";
 
 const ListPosts = (props) => {
   const [allPosts, setAllPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const history = useHistory();
+
   useEffect(() => {
     Promise.all([fetchAllPosts()]).then(([allPostsResults]) => {
       try {
@@ -16,6 +18,18 @@ const ListPosts = (props) => {
       }
     });
   }, []);
+
+  function searchResults(allPosts, searchTerm) {
+    if (allPosts.title.includes(searchTerm)) {
+      return true;
+    }
+      // return true if any of the fields you want to check against include the text
+      // strings have an .includes() method 
+    
+      }
+    const filteredPosts = allPosts.filter(allPosts => postMatches(allPosts, searchTerm));
+    const postsToDisplay = searchTerm.length ? filteredPosts : allPosts;
+    
 
   return (
     <div className="container">
@@ -31,11 +45,23 @@ const ListPosts = (props) => {
         </button>
       ) : null}
       <form className="postSearch">
-        <input></input>
-        <button>Search</button>
+        <input
+          value={searchTerm}
+          onChange={(event) => {
+            event.preventDefault();
+            console.log(event.target.value);
+            setSearchTerm(event.target.value);
+          }}
+        ></input>
+        <button onClick={(event)=>{
+          event.preventDefault()
+          searchResults(allPosts, searchTerm);
+        }}>
+          Search
+        </button>
       </form>
       <div className="postsList">
-        {allPosts.map((el) => {
+        {postsToDisplay.map((el) => {
           return (
             <Post
               el={el}
