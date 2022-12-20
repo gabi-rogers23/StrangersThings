@@ -119,3 +119,21 @@ export async function deletePost(POST_ID) {
     throw error;
   }
 }
+
+export async function sendMessage(POST_ID, content) {
+  try {
+    const res = await fetch(`${BASE_URL}/posts/${POST_ID}/messages`, {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify({
+        message: {
+          content: content 
+        }
+      })
+    })
+    const data = await res.json()
+    console.log (data.success)
+  }catch(error){
+    throw error;
+  }
+}

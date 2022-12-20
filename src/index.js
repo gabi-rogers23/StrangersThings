@@ -66,7 +66,7 @@ const App = () => {
               <NewPostForm />
             </Route>
             <Route path="/MessageForm">
-              <MessageForm />
+              <MessageForm featuredItem={featuredItem}/>
             </Route>
           </Switch>
         </div>
