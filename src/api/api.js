@@ -64,6 +64,7 @@ export async function registerNewUser(newUserName, newPassword) {
     });
     const data = await res.json();
     localStorage.setItem("auth_token", data.data.token);
+
     console.log(data);
   } catch (error) {
     throw error;
@@ -83,6 +84,7 @@ export async function logIn(userUsername, userPassword) {
     });
     const data = await res.json();
     localStorage.setItem("auth_token", data.data.token);
+
     console.log("Login Data" + data.data);
    (console.log(getHeaders()))
   } catch (error) {

@@ -9,6 +9,7 @@ import {
   Register,
   Profile,
   NewPostForm,
+  MessageForm,
 } from "./components/exports";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -63,6 +64,9 @@ const App = () => {
             </Route>
             <Route path="/newPostForm">
               <NewPostForm />
+            </Route>
+            <Route path="/MessageForm">
+              <MessageForm />
             </Route>
           </Switch>
         </div>

@@ -9,39 +9,42 @@ const Post = (props) => {
     <div>
       {props.el.active === true ? (
         <div
-          className="postDescription"
-          onClick={async (event) => {
+          className="postDescription">
+          <div onClick={(event) => {
             event.preventDefault();
-            await props.setFeaturedItem(props.el);
+            console.log("clicked the whole post")
+             props.setFeaturedItem(props.el);
             history.push("/FeaturedPost");
-          }}
-        >
-          <h3>{props.el.title.toUpperCase()}</h3>
-          {props.el.description}
+          }}> <h3>{props.el.title.toUpperCase()}</h3>
+          {props.el.description} 
           <ul>
             <li>
               <b>Price:</b> {props.el.price}
             </li>
             <li>
-              <b>Seller:</b> {props.username}
+              <b>Seller:</b> {props.currentUserIsAuthor ? "ME" : props.el.author.username}
             </li>
             <li>
               <b>Location:</b> {props.el.location}
             </li>
           </ul>
-          {props.currentUser === props.el.author ? (
+          </div>
+          {props.currentUserIsAuthor ? (
             <>
               <button
                 onClick={async (event) => {
                   event.preventDefault();
                    await deletePost()
                 }}
-              >
-                DELETE
-              </button>
+              > DELETE </button>
               <button>EDIT</button>
             </>
-          ) : null}
+          ) : <button onClick={(event) => {
+            event.preventDefault();
+            console.log("clicked the message button")
+             history.push("/MessageForm");
+          }}>MESSAGE</button>  }
+
         </div>
       ) : (
         ""

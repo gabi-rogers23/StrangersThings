@@ -39,7 +39,6 @@ const Profile = (props) => {
       </button>
       {viewMessages === true ? (
         <>
-          {" "}
           <button
             onClick={(event) => {
               event.preventDefault();
@@ -47,12 +46,10 @@ const Profile = (props) => {
             }}
           >
             View Your Posts
-          </button>{" "}
+          </button>
           <div className="profileInfo">
             {profileInfo.messages.map((el) => {
-              return (
-                <Messages el={el} key={el._id} />
-              );
+              return <Messages el={el} key={el._id} />;
             })}
           </div>
         </>
@@ -73,8 +70,8 @@ const Profile = (props) => {
                   el={el}
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
-                  currentUser={profileInfo._id}
-                  username = {"ME"}
+                  currentUserIsAuthor={true}
+                  
                 />
               );
             })}

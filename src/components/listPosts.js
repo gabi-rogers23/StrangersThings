@@ -30,7 +30,7 @@ const ListPosts = (props) => {
               el={el}
               setFeaturedItem={props.setFeaturedItem}
               key={el._id}
-              username = {el.author.username}
+              currentUserIsAuthor={el.isAuthor}
             />
           );
         })}

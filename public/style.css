@@ -81,7 +81,6 @@ ul {
 }
 
 .container {
-    /* background-color: lightseagreen; */
     border-bottom: 2px solid black;
     width: 1020px;
     height: fit-content;
@@ -252,3 +251,17 @@ ul {
     border: 1px solid gray;
 }
 
+/* ****** MESSAGE FORM ****** */
+
+.messageForm {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageInput {
+    height: 100px;
+    width: 400px;
+    text-align: top;
+}

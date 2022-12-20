@@ -20,3 +20,4 @@ export { default as Register } from "./register";
 export { default as Profile } from "./profile";
 export { default as NewPostForm } from "./newPostForm";
 export { default as Messages } from "./messages";
+export { default as MessageForm } from "./messageForm";
