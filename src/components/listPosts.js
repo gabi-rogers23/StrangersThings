@@ -5,6 +5,7 @@ import { Post } from "./exports";
 
 const ListPosts = (props) => {
   const [allPosts, setAllPosts] = useState([]);
+  const [postsToDisplay, setPostsToDisplay] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const history = useHistory();
 
@@ -13,23 +14,12 @@ const ListPosts = (props) => {
       try {
         console.log(allPostsResults);
         setAllPosts(allPostsResults);
+        setPostsToDisplay(allPostsResults);
       } catch (err) {
         console.error("Uh oh! Problems with Promises");
       }
     });
   }, []);
-
-  function searchResults(allPosts, searchTerm) {
-    if (allPosts.title.includes(searchTerm)) {
-      return true;
-    }
-      // return true if any of the fields you want to check against include the text
-      // strings have an .includes() method 
-    
-      }
-    const filteredPosts = allPosts.filter(allPosts => postMatches(allPosts, searchTerm));
-    const postsToDisplay = searchTerm.length ? filteredPosts : allPosts;
-    
 
   return (
     <div className="container">
@@ -51,12 +41,31 @@ const ListPosts = (props) => {
             event.preventDefault();
             console.log(event.target.value);
             setSearchTerm(event.target.value);
+            if (event.target.value.length === 0) {
+              setPostsToDisplay(allPosts);
+            }
           }}
         ></input>
-        <button onClick={(event)=>{
-          event.preventDefault()
-          searchResults(allPosts, searchTerm);
-        }}>
+        <button
+          onClick={(event) => {
+            event.preventDefault();
+            if (searchTerm.length) {
+              const lowercasedSearchTerm = searchTerm.toLowerCase();
+              setPostsToDisplay(
+                allPosts.filter((post) => {
+                  return (
+                    post.title.toLowerCase().includes(lowercasedSearchTerm) ||
+                    post.description
+                      .toLowerCase()
+                      .includes(lowercasedSearchTerm)
+                  );
+                })
+              );
+            } else {
+              setPostsToDisplay(allPosts);
+            }
+          }}
+        >
           Search
         </button>
       </form>
@@ -69,13 +78,10 @@ const ListPosts = (props) => {
               key={el._id}
               currentUserIsAuthor={el.isAuthor}
               onDelete={() => {
-                Promise.all([fetchAllPosts()]).then(([allPostsResults]) => {
-                  try {
-                    console.log(allPostsResults);
-                    setAllPosts(allPostsResults);
-                  } catch (err) {
-                    console.error("Uh oh! Problems with Promises");
-                  }
+                fetchAllPosts().then((allPostsResult) => {
+                  setAllPosts(allPostsResult);
+                  setPostsToDisplay(allPostsResult);
+                  setSearchTerm("")
                 });
               }}
             />

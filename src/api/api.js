@@ -22,7 +22,8 @@ export async function fetchAllPosts() {
 
     return data.data.posts;
   } catch (error) {
-    throw error;
+    console.log (error);
+    return []
   }
 }
 
