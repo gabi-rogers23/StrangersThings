@@ -14,12 +14,14 @@ import {
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
-  const [featuredItem, setFeaturedItem] = useState([]);
+  const [featuredItem, setFeaturedItem] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("auth_token")
   );
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [postToEdit, setPostToEdit] = useState ({})
+  
 
   return (
     <div>
@@ -28,7 +30,7 @@ const App = () => {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home isLoggedIn={isLoggedIn}/>
             </Route>
             <Route path="/logIn">
               <LogIn
@@ -44,6 +46,7 @@ const App = () => {
               <ListPosts
                 featuredItem={featuredItem}
                 setFeaturedItem={setFeaturedItem}
+                setPostToEdit={setPostToEdit}
               />
             </Route>
             <Route path="/featuredPost">
@@ -60,10 +63,10 @@ const App = () => {
               />
             </Route>
             <Route path="/profile">
-              <Profile setFeaturedItem={setFeaturedItem} />
+              <Profile setFeaturedItem={setFeaturedItem} setPostToEdit={setPostToEdit}/>
             </Route>
             <Route path="/newPostForm">
-              <NewPostForm />
+              <NewPostForm postToEdit={postToEdit} setPostToEdit={setPostToEdit}/>
             </Route>
             <Route path="/MessageForm">
               <MessageForm featuredItem={featuredItem}/>

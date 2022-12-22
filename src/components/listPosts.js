@@ -15,7 +15,7 @@ const ListPosts = (props) => {
         console.log(allPostsResults);
         setAllPosts(allPostsResults);
         setPostsToDisplay(allPostsResults);
-      } catch (err) {
+      } catch (error) {
         console.error("Uh oh! Problems with Promises");
       }
     });
@@ -28,7 +28,7 @@ const ListPosts = (props) => {
         <button
           onClick={(event) => {
             event.preventDefault();
-            history.push("./newPostForm");
+            history.push("/newPostForm");
           }}
         >
           Add New Post
@@ -75,9 +75,11 @@ const ListPosts = (props) => {
             <Post
               el={el}
               setFeaturedItem={props.setFeaturedItem}
+              featuredItem={setFeaturedItem}
               key={el._id}
               currentUserIsAuthor={el.isAuthor}
-              onDelete={() => {
+              setPostToEdit = {props.setPostToEdit}
+              onEdit={() => {
                 fetchAllPosts().then((allPostsResult) => {
                   setAllPosts(allPostsResult);
                   setPostsToDisplay(allPostsResult);

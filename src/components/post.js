@@ -28,7 +28,8 @@ const Post = (props) => {
                 {props.currentUserIsAuthor ? "ME" : props.el.author.username}
               </li>
               <li>
-                <b>Location:</b> {props.el.location}
+                <b>Location:</b>
+                {props.el.location ? props.el.location : "Not Available"}
               </li>
             </ul>
           </div>
@@ -39,12 +40,21 @@ const Post = (props) => {
                   console.log("DELETE CLICKED");
                   event.preventDefault();
                   await deletePost(props.el._id);
-                  props.onDelete();
+                  props.onEdit();
                 }}
               >
                 DELETE
               </button>
-              <button>EDIT</button>
+              <button
+                onClick={(event) => {
+                  event.preventDefault();
+                  props.setPostToEdit(props.el);
+                  history.push("/newPostForm");
+                  props.onEdit();
+                }}
+              >
+                EDIT
+              </button>
             </>
           ) : localStorage.getItem("auth_token") ? (
             <button

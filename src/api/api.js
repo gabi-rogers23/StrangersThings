@@ -138,3 +138,25 @@ export async function sendMessage(POST_ID, content) {
     throw error;
   }
 }
+
+export async function editPost(POST_ID, newTitle, newDescription, newPrice, newLocation, newWillDeliver){
+  const sendData = {
+    post: {
+      title: newTitle,
+      description: newDescription,
+      price: newPrice,
+      location: newLocation,
+      willDeliver: newWillDeliver
+    }
+  }
+  
+  try {
+    const res = await fetch(`${BASE_URL}/posts/${POST_ID}`, {
+      method: "PATCH",
+      headers: getHeaders(),
+      body: JSON.stringify(sendData)
+    })
+  }catch(error){
+    console.log(error)
+  }
+}

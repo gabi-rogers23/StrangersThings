@@ -27,12 +27,12 @@ button {
     border: 1px solid black;
     font: 500;
     font-size: 15px;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
 }
 
 button:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
 }
 
 .logo {
@@ -240,6 +240,17 @@ ul {
     width: 500px;
 }
 
+.newPostButtons {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.newPostButtons button {
+    margin: 15px
+}
+
 /* ****** MESSAGES ****** */
 
 .message {
@@ -252,6 +263,11 @@ ul {
     border: 1px solid gray;
 }
 
+.messageFrom {
+    width: 700px;
+    border-bottom: 1px solid black;
+}
+
 /* ****** MESSAGE FORM ****** */
 
 .messageForm {
@@ -259,6 +275,10 @@ ul {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+}
+
+.messageFormButtons {
+    margin-top: 15px;
 }
 
 .messageInput {

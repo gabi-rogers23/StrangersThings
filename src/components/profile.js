@@ -36,7 +36,7 @@ const Profile = (props) => {
         }}
       >
         Add New Post
-      </button>
+      </button><br/>
       {viewMessages === true ? (
         <>
           <button
@@ -45,7 +45,7 @@ const Profile = (props) => {
               setViewMessages(false);
             }}
           >
-            View Your Posts
+            YOUR POSTS
           </button>
           <div className="profileInfo">
             {profileInfo.messages.map((el) => {
@@ -59,6 +59,7 @@ const Profile = (props) => {
             onClick={(event) => {
               event.preventDefault();
               setViewMessages(true);
+              props.setFeaturedItem()
             }}
           >
             MESSAGES
@@ -71,7 +72,8 @@ const Profile = (props) => {
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
                   currentUserIsAuthor={true}
-                  onDelete={() => {
+                  setPostToEdit={props.setPostToEdit}
+                  onEdit={() => {
                     getProfile().then((profileResults) => {
                       try {
                         console.log(profileResults);

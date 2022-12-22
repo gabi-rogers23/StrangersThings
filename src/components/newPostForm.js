@@ -1,21 +1,32 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { addPost } from "../api/api";
+import { addPost, editPost } from "../api/api";
 
-const NewPostForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [location, setLocation] = useState("");
-  const [deliver, setDeliver] = useState(false);
+const NewPostForm = (props) => {
+  const [title, setTitle] = useState(
+    props.postToEdit ? props.postToEdit.title : ""
+  );
+  const [description, setDescription] = useState(
+    props.postToEdit ? props.postToEdit.description : ""
+  );
+  const [price, setPrice] = useState(
+    props.postToEdit ? props.postToEdit.price : ""
+  );
+  const [location, setLocation] = useState(
+    props.postToEdit ? props.postToEdit.location : ""
+  );
+  const [deliver, setDeliver] = useState(
+    props.postToEdit ? props.postToEdit.deliver : false
+  );
 
   const history = useHistory();
+  console.log(props.postToEdit);
 
   return (
     <div className="container">
       <div className="subHeader">New Post</div>
       <form className="newPostForm">
-        TITLE:{" "}
+        TITLE:
         <input
           required
           value={title}
@@ -25,7 +36,7 @@ const NewPostForm = () => {
           }}
         ></input>
         <p />
-        DESCRIPTION:{" "}
+        DESCRIPTION:
         <input
           required
           value={description}
@@ -35,7 +46,7 @@ const NewPostForm = () => {
           }}
         ></input>
         <p />
-        PRICE:{" "}
+        PRICE:
         <input
           required
           value={price}
@@ -45,16 +56,16 @@ const NewPostForm = () => {
           }}
         ></input>
         <p />
-        LOCATION:{" "}
+        LOCATION:
         <input
           value={location}
           onChange={(event) => {
             event.preventDefault();
             setLocation(event.target.value);
           }}
-        ></input>{" "}
+        ></input>
         <p />
-        <label htmlFor="willDeliver">DELIVER: </label>
+        <label htmlFor="willDeliver">DELIVERY: </label>
         <input
           type="checkbox"
           checked={deliver}
@@ -64,21 +75,43 @@ const NewPostForm = () => {
             console.log(event.target.checked);
           }}
         ></input>
-        <p />
-        <button
-          onClick={async (event) => {
-            event.preventDefault();
-            await addPost(title, description, price, location, deliver);
-            setTitle("");
-            setDescription("");
-            setPrice("");
-            setLocation("");
-            setDeliver(false);
-            history.goBack()
-          }}
-        >
-          ENTER
-        </button>
+        <div className="newPostButtons">
+          <button
+            onClick={async (event) => {
+              event.preventDefault();
+              if (props.postToEdit) {
+                await editPost(
+                  props.postToEdit._id,
+                  title,
+                  description,
+                  price,
+                  location,
+                  deliver
+                );
+              } else {
+                await addPost(title, description, price, location, deliver);
+              }
+              setTitle("");
+              setDescription("");
+              setPrice("");
+              setLocation("");
+              setDeliver(false);
+              props.setPostToEdit(null);
+              history.goBack();
+            }}
+          >
+            ENTER
+          </button>
+          <button
+            onClick={(event) => {
+              event.preventDefault();
+              props.setPostToEdit(null);
+              history.goBack();
+            }}
+          >
+            BACK
+          </button>
+        </div>
       </form>
     </div>
   );

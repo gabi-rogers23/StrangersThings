@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
   const history = useHistory();
   return (
     <div>
@@ -10,7 +10,6 @@ const Home = () => {
           <img src="/Images/homePageImage.jpg"></img>
         </div>
         <div className="homeRightSide">
-          
           <p>Welcome to Stranger's Things!</p>
           <img className="cube" src="/Images/cube.png"></img>
           <div className="homeColumn">
@@ -20,28 +19,42 @@ const Home = () => {
             </p>
             <br />
             To get started: <p />
-            <button
-              onClick={(event) => {
+            {props.isLoggedIn ? (
+              <><button onClick={(event) =>{
                 event.preventDefault();
-                history.push("./logIn");
-              }}
-            >
-              Log In
-            </button>
-            <p/>- or -<p/>
-            <button
-              onClick={(event) => {
+                history.push("/newPostForm")
+              }}>Create Post</button>
+              <p />- or -<p />
+              <button onClick={(event) => {
                 event.preventDefault();
-                history.push("/register");
-              }}
-            >
-              Create an Account!
-            </button>
+                history.push("/profile")
+              }}>View Profile</button></>
+            ) : (
+              <>
+                <button
+                  onClick={(event) => {
+                    event.preventDefault();
+                    history.push("/logIn");
+                  }}
+                >s
+                  Log In
+                </button>
+                <p />- or -<p />
+                <button
+                  onClick={(event) => {
+                    event.preventDefault();
+                    history.push("/register");
+                  }}
+                >
+                  Create an Account!
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
       <div className="photoCredit">
-        Photo by 
+        Photo by
         <a href="https://unsplash.com/es/@joannakosinska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
           Joanna Kosinska
         </a>
