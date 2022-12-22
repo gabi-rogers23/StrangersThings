@@ -6,7 +6,7 @@ const LogIn = (props) => {
   const history = useHistory();
   return (
     <div className="container">
-      <div className="logInTitle"> Log In! </div>
+      <div className="subHeader"> Log In! </div>
       <form className="logInForm">
         <div>
           USERNAME:
@@ -19,8 +19,8 @@ const LogIn = (props) => {
               props.setUsername(event.target.value);
             }}
           ></input>
-          <br />
         </div>
+        <br />
         <div>
           PASSWORD:<input required type="password" value={props.password} onChange={(event) =>{
             event.preventDefault();

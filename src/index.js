@@ -63,7 +63,7 @@ const App = () => {
               />
             </Route>
             <Route path="/profile">
-              <Profile setFeaturedItem={setFeaturedItem} setPostToEdit={setPostToEdit}/>
+              <Profile setFeaturedItem={setFeaturedItem} featuredItem={featuredItem} setPostToEdit={setPostToEdit}/>
             </Route>
             <Route path="/newPostForm">
               <NewPostForm postToEdit={postToEdit} setPostToEdit={setPostToEdit}/>

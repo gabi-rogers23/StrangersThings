@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Messages = (props) => {
+  const history = useHistory()
   console.log(props.el)
     return (
         <div className="message">
@@ -9,10 +11,6 @@ const Messages = (props) => {
         <li>Subject:  {props.el.post.title}</li><br/>    
         <li>{props.el.content}</li>
         </ul>
-       <button onClick={(event)=>{
-        event.preventDefault()
-        
-       }}>Send Another Message</button>
       </div>
     )
 }

@@ -28,8 +28,12 @@ const Post = (props) => {
                 {props.currentUserIsAuthor ? "ME" : props.el.author.username}
               </li>
               <li>
-                <b>Location:</b>
+                <b>Location: </b>
                 {props.el.location ? props.el.location : "Not Available"}
+              </li>
+              <li>
+                <b>Will Deliver: </b>
+                {props.el.willDeliver ? "Yes" : "No"}
               </li>
             </ul>
           </div>

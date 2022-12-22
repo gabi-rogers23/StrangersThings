@@ -36,7 +36,7 @@ const Home = (props) => {
                     event.preventDefault();
                     history.push("/logIn");
                   }}
-                >s
+                >
                   Log In
                 </button>
                 <p />- or -<p />

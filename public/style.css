@@ -207,18 +207,8 @@ ul {
 
 /* ****** LOG IN ****** */
 
-.logInTitle {
-    text-align: center;
-    font-size: x-large;
-    margin-top: 15px;
-    padding: 15px;
-    height: 50px;
-    width: 900px;
-    background-color: lightseagreen;
-}
-
 .logInForm {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,6 +221,7 @@ ul {
 
 .logInUserQ {
     margin-top: 100px;
+    text-align: center;
 }
 
 /* ****** NEW POST FORM ****** */

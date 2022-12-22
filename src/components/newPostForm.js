@@ -16,7 +16,7 @@ const NewPostForm = (props) => {
     props.postToEdit ? props.postToEdit.location : ""
   );
   const [deliver, setDeliver] = useState(
-    props.postToEdit ? props.postToEdit.deliver : false
+    props.postToEdit ? props.postToEdit.willDeliver : false
   );
 
   const history = useHistory();
@@ -65,7 +65,7 @@ const NewPostForm = (props) => {
           }}
         ></input>
         <p />
-        <label htmlFor="willDeliver">DELIVERY: </label>
+        <label htmlFor="willDeliver">WILL DELIVER: </label>
         <input
           type="checkbox"
           checked={deliver}

@@ -75,7 +75,6 @@ const ListPosts = (props) => {
             <Post
               el={el}
               setFeaturedItem={props.setFeaturedItem}
-              featuredItem={setFeaturedItem}
               key={el._id}
               currentUserIsAuthor={el.isAuthor}
               setPostToEdit = {props.setPostToEdit}
