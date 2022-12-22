@@ -15,7 +15,6 @@ const LogIn = (props) => {
             value={props.username}
             onChange={(event) => {
               event.preventDefault();
-              console.log("login Username "+ event.target.value);
               props.setUsername(event.target.value);
             }}
           ></input>
@@ -24,7 +23,6 @@ const LogIn = (props) => {
         <div>
           PASSWORD:<input required type="password" value={props.password} onChange={(event) =>{
             event.preventDefault();
-            console.log("login Password " + event.target.value)
             props.setPassword(event.target.value)
           }}></input>
         </div>

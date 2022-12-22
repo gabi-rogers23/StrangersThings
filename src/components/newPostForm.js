@@ -20,7 +20,6 @@ const NewPostForm = (props) => {
   );
 
   const history = useHistory();
-  console.log(props.postToEdit);
 
   return (
     <div className="container">
@@ -80,7 +79,7 @@ const NewPostForm = (props) => {
             onClick={async (event) => {
               event.preventDefault();
               if (props.postToEdit) {
-                await editPost(
+                const post = await editPost(
                   props.postToEdit._id,
                   title,
                   description,
@@ -88,6 +87,7 @@ const NewPostForm = (props) => {
                   location,
                   deliver
                 );
+                props.setFeaturedItem(post)
               } else {
                 await addPost(title, description, price, location, deliver);
               }
@@ -96,7 +96,6 @@ const NewPostForm = (props) => {
               setPrice("");
               setLocation("");
               setDeliver(false);
-              props.setPostToEdit(null);
               history.goBack();
             }}
           >
@@ -105,7 +104,6 @@ const NewPostForm = (props) => {
           <button
             onClick={(event) => {
               event.preventDefault();
-              props.setPostToEdit(null);
               history.goBack();
             }}
           >

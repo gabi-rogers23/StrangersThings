@@ -14,14 +14,16 @@ import {
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
+  // Single Post / Edit Post / Message Post State
   const [featuredItem, setFeaturedItem] = useState({});
+  const [currentUserIsAuthor, setCurrentUserIsAuthor] = useState(false);
+
+  // Login State
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("auth_token")
   );
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [postToEdit, setPostToEdit] = useState ({})
-  
 
   return (
     <div>
@@ -30,7 +32,7 @@ const App = () => {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Home isLoggedIn={isLoggedIn}/>
+              <Home isLoggedIn={isLoggedIn} />
             </Route>
             <Route path="/logIn">
               <LogIn
@@ -46,11 +48,11 @@ const App = () => {
               <ListPosts
                 featuredItem={featuredItem}
                 setFeaturedItem={setFeaturedItem}
-                setPostToEdit={setPostToEdit}
+                setCurrentUserIsAuthor={setCurrentUserIsAuthor}
               />
             </Route>
             <Route path="/featuredPost">
-              <Feature featuredItem={featuredItem} />
+              <Feature featuredItem={featuredItem} currentUserIsAuthor={currentUserIsAuthor}/>
             </Route>
             <Route path="/register">
               <Register
@@ -63,13 +65,16 @@ const App = () => {
               />
             </Route>
             <Route path="/profile">
-              <Profile setFeaturedItem={setFeaturedItem} featuredItem={featuredItem} setPostToEdit={setPostToEdit}/>
+              <Profile
+                setFeaturedItem={setFeaturedItem}
+                setCurrentUserIsAuthor={setCurrentUserIsAuthor}
+              />
             </Route>
             <Route path="/newPostForm">
-              <NewPostForm postToEdit={postToEdit} setPostToEdit={setPostToEdit}/>
+              <NewPostForm postToEdit={featuredItem} setFeaturedItem={setFeaturedItem} />
             </Route>
             <Route path="/MessageForm">
-              <MessageForm featuredItem={featuredItem}/>
+              <MessageForm featuredItem={featuredItem} />
             </Route>
           </Switch>
         </div>

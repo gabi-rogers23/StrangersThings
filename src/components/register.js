@@ -15,7 +15,6 @@ const Register = (props) => {
             value={props.username}
             onChange={(event) => {
               event.preventDefault();
-              console.log("register Username " + event.target.value);
               props.setUsername(event.target.value);
             }}
           ></input>
@@ -28,7 +27,6 @@ const Register = (props) => {
             value={props.password}
             onChange={(event) => {
               event.preventDefault();
-              console.log("register Password " + event.target.value);
               props.setPassword(event.target.value);
             }}
           ></input>

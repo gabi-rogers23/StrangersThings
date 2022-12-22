@@ -21,6 +21,7 @@ const Profile = (props) => {
         console.error("Uh oh! Problems with Profile Promises");
       }
     });
+    props.setCurrentUserIsAuthor(true);
   }, []);
 
   return (
@@ -32,11 +33,13 @@ const Profile = (props) => {
       <button
         onClick={(event) => {
           event.preventDefault();
+          props.setFeaturedItem(null);
           history.push("./newPostForm");
         }}
       >
         Add New Post
-      </button><br/>
+      </button>
+      <br />
       {viewMessages === true ? (
         <>
           <button
@@ -49,7 +52,13 @@ const Profile = (props) => {
           </button>
           <div className="profileInfo">
             {profileInfo.messages.map((el) => {
-              return <Messages el={el} key={el._id} currentUserIsAuthor={el.fromUser._id === profileInfo._id}/>;
+              return (
+                <Messages
+                  el={el}
+                  key={el._id}
+                  currentUserIsAuthor={el.fromUser._id === profileInfo._id}
+                />
+              );
             })}
           </div>
         </>
@@ -59,7 +68,7 @@ const Profile = (props) => {
             onClick={(event) => {
               event.preventDefault();
               setViewMessages(true);
-              props.setFeaturedItem()
+              props.setFeaturedItem();
             }}
           >
             MESSAGES
@@ -71,18 +80,6 @@ const Profile = (props) => {
                   el={el}
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
-                  currentUserIsAuthor={true}
-                  setPostToEdit={props.setPostToEdit}
-                  onEdit={() => {
-                    getProfile().then((profileResults) => {
-                      try {
-                        console.log(profileResults);
-                        setProfileInfo(profileResults);
-                      } catch (error) {
-                        console.error("Uh oh! Problems with Profile Promises");
-                      }
-                    });
-                  }}
                 />
               );
             })}

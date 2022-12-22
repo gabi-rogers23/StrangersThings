@@ -155,8 +155,12 @@ export async function editPost(POST_ID, newTitle, newDescription, newPrice, newL
       method: "PATCH",
       headers: getHeaders(),
       body: JSON.stringify(sendData)
-    })
+    });
+    const data = await res.json()
+    console.log(data);
+    return data.data.post;
   }catch(error){
     console.log(error)
+    return {};
   }
 }

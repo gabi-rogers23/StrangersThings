@@ -28,6 +28,7 @@ const ListPosts = (props) => {
         <button
           onClick={(event) => {
             event.preventDefault();
+            props.setFeaturedItem(null);
             history.push("/newPostForm");
           }}
         >
@@ -76,15 +77,7 @@ const ListPosts = (props) => {
               el={el}
               setFeaturedItem={props.setFeaturedItem}
               key={el._id}
-              currentUserIsAuthor={el.isAuthor}
-              setPostToEdit = {props.setPostToEdit}
-              onEdit={() => {
-                fetchAllPosts().then((allPostsResult) => {
-                  setAllPosts(allPostsResult);
-                  setPostsToDisplay(allPostsResult);
-                  setSearchTerm("")
-                });
-              }}
+              setCurrentUserIsAuthor={props.setCurrentUserIsAuthor}
             />
           );
         })}
