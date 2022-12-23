@@ -27,7 +27,7 @@ button {
     border: 1px solid black;
     font: 500;
     font-size: 15px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -78,6 +78,12 @@ a {
 
 ul {
     list-style: none
+}
+
+.material-icons {
+    color:teal;
+    margin-right: 10px;
+    /* border: 1px solid red; */
 }
 
 .container {
@@ -182,15 +188,6 @@ ul {
     margin: 25px;
 }
 
-.postDescription {
-    display: flex;
-    flex-flow: column wrap;
-    border: 1px dashed darkcyan;
-    margin: 25px;
-    padding: 10px;
-    width: 800px;
-}
-
 .postSearch {
     height: fit-content;
     width: fit-content;
@@ -205,14 +202,35 @@ ul {
     border-bottom: 2px solid darkgrey;
 }
 
+/* ****** FEATURE ****** */
+.postDescription {
+    display: flex;
+    flex-flow: column wrap;
+    border: 1px dashed darkcyan;
+    margin: 25px;
+    padding: 10px;
+    width: 800px;
+}
+
+.featureBtn {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
 /* ****** LOG IN ****** */
+.logInWarning{
+    display: block;
+    margin-bottom: 40px;
+}
 
 .logInForm {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logInButton {
@@ -233,13 +251,14 @@ ul {
 
 .newPostButtons {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    margin-top: 15px
 }
 
 .newPostButtons button {
-    margin: 15px
+    width: 700px;
 }
 
 /* ****** MESSAGES ****** */
@@ -269,7 +288,15 @@ ul {
 }
 
 .messageFormButtons {
-    margin-top: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px
+}
+
+.messageFormButtons button {
+    width: 700px;
 }
 
 .messageInput {

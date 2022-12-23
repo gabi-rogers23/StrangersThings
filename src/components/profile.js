@@ -21,7 +21,6 @@ const Profile = (props) => {
         console.error("Uh oh! Problems with Profile Promises");
       }
     });
-    props.setCurrentUserIsAuthor(true);
   }, []);
 
   return (
@@ -31,26 +30,30 @@ const Profile = (props) => {
       </div>
       <img className="cube" src="/Images/cube.png"></img>
       <button
+        className="featureBtn"
         onClick={(event) => {
           event.preventDefault();
           props.setFeaturedItem(null);
           history.push("./newPostForm");
         }}
       >
+        <span className="material-icons">add</span>
         Add New Post
       </button>
       <br />
       {viewMessages === true ? (
         <>
           <button
+            className="featureBtn"
             onClick={(event) => {
               event.preventDefault();
               setViewMessages(false);
             }}
           >
-            YOUR POSTS
+            <span className="material-icons">format_list_bulleted</span> View
+            Your Posts
           </button>
-          <div className="profileInfo">
+          <div className="postsList">
             {profileInfo.messages.map((el) => {
               return (
                 <Messages
@@ -65,21 +68,25 @@ const Profile = (props) => {
       ) : (
         <>
           <button
+            className="featureBtn"
             onClick={(event) => {
               event.preventDefault();
               setViewMessages(true);
               props.setFeaturedItem();
             }}
           >
-            MESSAGES
+            <span className="material-icons">mail</span> View Your Messages
           </button>
-          <div className="profileInfo">
+          <div className="postsList">
             {profileInfo.posts.map((el) => {
               return (
                 <Post
                   el={el}
                   setFeaturedItem={props.setFeaturedItem}
                   key={el._id}
+                  isLoggedIn={props.isLoggedIn}
+                  setCurrentUserIsAuthor={props.setCurrentUserIsAuthor}
+                  currentUserIsAuthor={true}
                 />
               );
             })}

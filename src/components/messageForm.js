@@ -25,6 +25,7 @@ const MessageForm = (props) => {
         ></input>
         <div className="messageFormButtons">
           <button
+            className="featureBtn"
             onClick={async (event) => {
               event.preventDefault();
               await sendMessage(props.featuredItem._id, messageContent);
@@ -32,16 +33,17 @@ const MessageForm = (props) => {
               history.goBack();
             }}
           >
-            SEND
+            <span className="material-icons">send</span>SEND
           </button>
 
           <button
+            className="featureBtn"
             onClick={(event) => {
               event.preventDefault();
               history.goBack();
             }}
           >
-            BACK
+            <span className="material-icons">arrow_back</span>BACK
           </button>
         </div>
       </form>

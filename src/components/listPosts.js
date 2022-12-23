@@ -26,12 +26,14 @@ const ListPosts = (props) => {
       <div className="subHeader">Post Feed </div>
       {localStorage.getItem("auth_token") ? (
         <button
+        className="featureBtn"
           onClick={(event) => {
             event.preventDefault();
             props.setFeaturedItem(null);
             history.push("/newPostForm");
           }}
         >
+          <span className="material-icons">add</span>
           Add New Post
         </button>
       ) : null}
@@ -58,7 +60,8 @@ const ListPosts = (props) => {
                     post.title.toLowerCase().includes(lowercasedSearchTerm) ||
                     post.description
                       .toLowerCase()
-                      .includes(lowercasedSearchTerm)
+                      .includes(lowercasedSearchTerm) ||
+                    post.location.toLowerCase().includes(lowercasedSearchTerm)
                   );
                 })
               );
@@ -78,6 +81,8 @@ const ListPosts = (props) => {
               setFeaturedItem={props.setFeaturedItem}
               key={el._id}
               setCurrentUserIsAuthor={props.setCurrentUserIsAuthor}
+              currentUserIsAuthor={el.isAuthor}
+              isLoggedIn={props.isLoggedIn}
             />
           );
         })}

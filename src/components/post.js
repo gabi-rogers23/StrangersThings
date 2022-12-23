@@ -13,13 +13,20 @@ const Post = (props) => {
               event.preventDefault();
               console.log("clicked the whole post");
               props.setFeaturedItem(props.el);
-              if (props.setCurrentUserIsAuthor) {
-                props.setCurrentUserIsAuthor(props.el.isAuthor)
+              props.setCurrentUserIsAuthor(props.currentUserIsAuthor);
+
+              if (props.isLoggedIn) {
+                history.push("/FeaturedPost");
+              } else {
+                history.push("/logIn");
               }
-              history.push("/FeaturedPost");
             }}
           >
-            <img className="cube" src="/Images/cube.png"></img>
+            {props.currentUserIsAuthor ? (
+              <span className="material-icons">star</span>
+            ) : (
+              <span className="material-icons">inventory</span>
+            )}
             <h3>{props.el.title.toUpperCase()}</h3>
             {props.el.description}
           </div>

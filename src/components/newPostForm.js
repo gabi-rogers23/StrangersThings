@@ -76,6 +76,7 @@ const NewPostForm = (props) => {
         ></input>
         <div className="newPostButtons">
           <button
+            className="featureBtn"
             onClick={async (event) => {
               event.preventDefault();
               if (props.postToEdit) {
@@ -87,7 +88,7 @@ const NewPostForm = (props) => {
                   location,
                   deliver
                 );
-                props.setFeaturedItem(post)
+                props.setFeaturedItem(post);
               } else {
                 await addPost(title, description, price, location, deliver);
               }
@@ -99,15 +100,16 @@ const NewPostForm = (props) => {
               history.goBack();
             }}
           >
-            ENTER
+            <span className="material-icons">check</span>ENTER
           </button>
           <button
+            className="featureBtn"
             onClick={(event) => {
               event.preventDefault();
               history.goBack();
             }}
           >
-            BACK
+            <span className="material-icons">arrow_back</span>BACK
           </button>
         </div>
       </form>
