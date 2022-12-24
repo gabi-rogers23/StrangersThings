@@ -51,6 +51,8 @@ const Register = (props) => {
           className="logInCreateAccount"
           onClick={(event) => {
             event.preventDefault();
+            props.setUsername("");
+            props.setPassword("");
             history.push("/logIn");
           }}
         >
