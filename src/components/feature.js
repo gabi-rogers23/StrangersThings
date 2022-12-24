@@ -10,7 +10,6 @@ const Feature = (props) => {
     <div className="container">
       <div className="subHeader">{props.featuredItem.title.toUpperCase()}</div>
       <div className="postDescription">
-        
         <ul>
           <li>
             <b>Description:</b> {props.featuredItem.description}
@@ -30,9 +29,14 @@ const Feature = (props) => {
           <br />
           <li>
             <b>Seller:</b>
-            {props.currentUserIsAuthor
-              ? <> ME<span className="material-icons">star</span></>
-              : props.featuredItem.author.username}
+            {props.currentUserIsAuthor ? (
+              <>
+                {" "}
+                ME<span className="material-icons">star</span>
+              </>
+            ) : (
+              props.featuredItem.author.username
+            )}
           </li>
           <br />
           <li>
@@ -83,7 +87,7 @@ const Feature = (props) => {
           className="featureBtn"
           onClick={(event) => {
             event.preventDefault();
-            props.setCurrentUserIsAuthor()
+            props.setCurrentUserIsAuthor();
             history.goBack();
           }}
         >

@@ -26,7 +26,7 @@ const ListPosts = (props) => {
       <div className="subHeader">Post Feed </div>
       {localStorage.getItem("auth_token") ? (
         <button
-        className="featureBtn"
+          className="featureBtn"
           onClick={(event) => {
             event.preventDefault();
             props.setFeaturedItem(null);

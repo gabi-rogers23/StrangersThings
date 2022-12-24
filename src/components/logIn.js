@@ -9,8 +9,8 @@ const LogIn = (props) => {
       <div className="subHeader"> Log In! </div>
       <form className="logInForm">
         <div className="logInWarning">
-          <span className="material-icons">warning</span>To view post details you must
-          be logged in.
+          <span className="material-icons">warning</span>To view post details
+          you must be logged in.
         </div>
         <div>
           USERNAME:

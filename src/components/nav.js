@@ -1,7 +1,6 @@
 import { React } from "react";
 import { NavLink } from "react-router-dom";
 
-
 const App = (props) => {
   return (
     <header>
@@ -16,18 +15,24 @@ const App = (props) => {
         </NavLink>
 
         {localStorage.getItem("auth_token") ? (
-          <><NavLink to="/Login" activeClassName="topNavActive" onClick={()=>{
-            console.log("Logged In " + props.isLoggedIn)
-            props.setIsLoggedIn(false)
-            localStorage.clear();
-            console.log("Log Out Click " + props.isLoggedIn)
-          }}>
-            LOG OUT
-          </NavLink>
+          <>
+            <NavLink
+              to="/Login"
+              activeClassName="topNavActive"
+              onClick={() => {
+                console.log("Logged In " + props.isLoggedIn);
+                props.setIsLoggedIn(false);
+                localStorage.clear();
+                console.log("Log Out Click " + props.isLoggedIn);
+              }}
+            >
+              LOG OUT
+            </NavLink>
 
-          <NavLink to ="/profile" activeClassName="topNavActive">
-            PROFILE
-          </NavLink></>
+            <NavLink to="/profile" activeClassName="topNavActive">
+              PROFILE
+            </NavLink>
+          </>
         ) : (
           <NavLink to="/Login" activeClassName="topNavActive">
             LOG IN

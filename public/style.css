@@ -1,306 +1,302 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Red+Hat+Display:wght@300&family=Roboto+Condensed&family=Ubuntu:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Red+Hat+Display:wght@300&family=Roboto+Condensed&family=Ubuntu:wght@500&display=swap");
 
-*{
-    box-sizing: border-box;
-    font-family: Epilogue;
-  }
+* {
+  box-sizing: border-box;
+  font-family: Epilogue;
+}
 
 body {
-    display: flex;
-    flex-flow: column wrap ;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    width: 1020px;
-    height: 150px;
-    border: 3px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 1020px;
+  height: 150px;
+  border: 3px solid black;
 }
 
 button {
-    background-color: white;
-    box-shadow: none;
-    border: 1px solid black;
-    font: 500;
-    font-size: 15px;
-    padding: 5px;
-    text-align: center;
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid black;
+  font: 500;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
 }
 
 button:hover {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
 }
 
 .logo {
-    font-size: 95px;
-    padding-left: 35px;
-    width: 150px;    
-    height: 147px;
-    border-right: 3px solid black;
-    letter-spacing: -19px;
-    padding-top: 20px;
-    font-family: Roboto Condensed;
+  font-size: 95px;
+  padding-left: 35px;
+  width: 150px;
+  height: 147px;
+  border-right: 3px solid black;
+  letter-spacing: -19px;
+  padding-top: 20px;
+  font-family: Roboto Condensed;
 }
 
 .cube {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    height: 50px;
-    width: 50px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  height: 50px;
+  width: 50px;
 }
 
 .content {
-    display: flex;
-    flex-flow: column wrap;
-    /* border: 1px solid red; */
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .centerHeader {
-    height: fit-content;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    font-family: Roboto Condensed;
-    letter-spacing: 2px;
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: Roboto Condensed;
+  letter-spacing: 2px;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-
 ul {
-    list-style: none
+  list-style: none;
 }
 
 .material-icons {
-    color:teal;
-    margin-right: 10px;
-    /* border: 1px solid red; */
+  color: teal;
+  margin-right: 10px;
 }
 
 .container {
-    border-bottom: 2px solid black;
-    width: 1020px;
-    height: fit-content;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
+  border-bottom: 2px solid black;
+  width: 1020px;
+  height: fit-content;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
 }
 
 .subHeader {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 50px;
-    width: 900px;
-    background-color: lightseagreen;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 50px;
+  width: 900px;
+  background-color: lightseagreen;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
 }
 
 /* ****** NAV ****** */
 .topNav {
-    display: flex;
-    flex-flow: column;
-    width: 150px;    
-    height: 147px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-left: 3px solid black; 
-    font-family: Roboto Condensed;
+  display: flex;
+  flex-flow: column;
+  width: 150px;
+  height: 147px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-left: 3px solid black;
+  font-family: Roboto Condensed;
 }
 
 .topNavActive {
-    color: teal;
-    border-bottom: 1px solid teal;
+  color: teal;
+  border-bottom: 1px solid teal;
 }
-
 
 /* ****** HOME ****** */
 .title {
-    font-size: 65px;
-    margin-top: 40px;
+  font-size: 65px;
+  margin-top: 40px;
 }
 
 .tagline {
-    font-size: 18px;
-    margin-top: 5px;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
 .homeLeftSqare {
-    height: 500px;
-    Width: 500px;
-    font-size: xx-small;
+  height: 500px;
+  width: 500px;
+  font-size: xx-small;
 }
 
 .homeLeftSqare img {
-    margin-top: 20px;
-    height: 500px;
-    width: 500px;
+  margin-top: 20px;
+  height: 500px;
+  width: 500px;
 }
 
 .photoCredit {
-    font-size: xx-small;
-    margin-top: 2px;
+  font-size: xx-small;
+  margin-top: 2px;
 }
 
 .homeRightSide {
-    height: 500px; 
-    width: 320px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
-    border-top: 1px solid black;
-    padding: 10px;
-    margin-top: 50px;
+  height: 500px;
+  width: 320px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+  border-top: 1px solid black;
+  padding: 10px;
+  margin-top: 50px;
 }
 
 .homeParagraph {
-    font-size: medium;
+  font-size: medium;
 }
 
 .homeColumn {
-    margin-top: 5px;
-    font-size: large;
-    padding: 20px;
+  margin-top: 5px;
+  font-size: large;
+  padding: 20px;
 }
-
 
 /* ****** POSTS ****** */
 
 .postsList {
-    display: inline;
-    border: 1px solid grey;
-    margin: 25px;
+  display: inline;
+  border: 1px solid grey;
+  margin: 25px;
 }
 
 .postSearch {
-    height: fit-content;
-    width: fit-content;
-    margin-top: 15px;
+  height: fit-content;
+  width: fit-content;
+  margin-top: 15px;
 }
 
 .postSearch input {
-    height: 25px;
-    width: 500px;
-    margin-right: 10px;
-    border: none;
-    border-bottom: 2px solid darkgrey;
+  height: 25px;
+  width: 500px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid darkgrey;
 }
 
 /* ****** FEATURE ****** */
 .postDescription {
-    display: flex;
-    flex-flow: column wrap;
-    border: 1px dashed darkcyan;
-    margin: 25px;
-    padding: 10px;
-    width: 800px;
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px dashed darkcyan;
+  margin: 25px;
+  padding: 10px;
+  width: 800px;
 }
 
 .featureBtn {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ****** LOG IN ****** */
-.logInWarning{
-    display: block;
-    margin-bottom: 40px;
+.logInWarning {
+  display: block;
+  margin-bottom: 40px;
 }
 
 .logInForm {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .logInButton {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .logInUserQ {
-    margin-top: 100px;
-    text-align: center;
+  margin-top: 100px;
+  text-align: center;
 }
 
 /* ****** NEW POST FORM ****** */
 
 .newPostForm input {
-    height: 25px;
-    width: 500px;
+  height: 25px;
+  width: 500px;
 }
 
 .newPostButtons {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .newPostButtons button {
-    width: 700px;
+  width: 700px;
 }
 
 /* ****** MESSAGES ****** */
 
 .message {
-    display: flex;
-    flex-wrap: column wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 25px;
-    padding: 25px;
-    border: 1px solid gray;
+  display: flex;
+  flex-wrap: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px;
+  padding: 25px;
+  border: 1px solid gray;
 }
 
 .messageFrom {
-    width: 700px;
-    border-bottom: 1px solid black;
+  width: 700px;
+  border-bottom: 1px solid black;
 }
 
 /* ****** MESSAGE FORM ****** */
 
 .messageForm {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .messageFormButtons {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .messageFormButtons button {
-    width: 700px;
+  width: 700px;
 }
 
 .messageInput {
-    height: 100px;
-    width: 400px;
-    text-align: top;
+  height: 100px;
+  width: 400px;
+  text-align: top;
 }

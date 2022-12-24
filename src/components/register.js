@@ -8,7 +8,10 @@ const Register = (props) => {
     <div className="container">
       <div className="subHeader">Create an Account!</div>
       <form className="logInForm">
-        <div>Set your username and password to create an account!</div><br/><span className="material-icons">sentiment_satisfied_alt</span><br/>
+        <div>Set your username and password to create an account!</div>
+        <br />
+        <span className="material-icons">sentiment_satisfied_alt</span>
+        <br />
         <div>
           USERNAME:
           <input
@@ -46,7 +49,7 @@ const Register = (props) => {
         </button>
       </form>
       <div className="logInUserQ">
-       Already a user? <p />
+        Already a user? <p />
         <button
           className="logInCreateAccount"
           onClick={(event) => {

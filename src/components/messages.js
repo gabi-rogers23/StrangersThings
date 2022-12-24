@@ -10,7 +10,6 @@ const Messages = (props) => {
       <div>
         <ul>
           <li className="messageFrom">
-            
             {props.currentUserIsAuthor
               ? "From: Me"
               : `From: ${props.el.fromUser.username}`}

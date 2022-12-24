@@ -53,7 +53,11 @@ const App = () => {
               />
             </Route>
             <Route path="/featuredPost">
-              <Feature featuredItem={featuredItem} currentUserIsAuthor={currentUserIsAuthor} setCurrentUserIsAuthor={setCurrentUserIsAuthor}/>
+              <Feature
+                featuredItem={featuredItem}
+                currentUserIsAuthor={currentUserIsAuthor}
+                setCurrentUserIsAuthor={setCurrentUserIsAuthor}
+              />
             </Route>
             <Route path="/register">
               <Register
@@ -73,7 +77,10 @@ const App = () => {
               />
             </Route>
             <Route path="/newPostForm">
-              <NewPostForm postToEdit={featuredItem} setFeaturedItem={setFeaturedItem} />
+              <NewPostForm
+                postToEdit={featuredItem}
+                setFeaturedItem={setFeaturedItem}
+              />
             </Route>
             <Route path="/MessageForm">
               <MessageForm featuredItem={featuredItem} />
