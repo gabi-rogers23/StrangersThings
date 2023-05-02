@@ -12,7 +12,7 @@ body {
 
 header {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -73,7 +73,6 @@ button:hover {
   justify-content: space-evenly;
   font-family: Roboto Condensed;
   letter-spacing: 2px;
-  border: 1px solid red;
   flex-basis: 60%;
 }
 
@@ -93,8 +92,7 @@ ul {
 
 .container {
   border-bottom: 2px solid black;
-  width: 1020px;
-  height: fit-content;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -120,14 +118,17 @@ ul {
 /* ****** NAV ****** */
 .topNav {
   display: flex;
-  flex-flow: column;
-  width: 150px;
+  flex-flow: column wrap;
   height: 100%;
   align-items: center;
   justify-content: space-evenly;
   border-left: 3px solid black;
   font-family: Roboto Condensed;
   flex-basis: 15%;
+}
+
+.navIcon{
+  display: none;
 }
 
 .topNavActive {
@@ -138,6 +139,7 @@ ul {
 /* ****** HOME ****** */
 .title {
   font-size: 4rem;
+  border: 1px solid blue;
 }
 
 .tagline {
@@ -319,14 +321,33 @@ ul {
 }
 
 @media screen and (max-width: 600px){
+.centerHeader{
+  flex-basis: 50%
+}
 
 .title {
   font-size: 2rem;
-  height: 100%;
+}
+
+.tagline{
+  font-size: 1rem;
 }
 
 .logo{
   font-size: 5rem;
   letter-spacing: -20px;
+  flex-basis: 25%;
+}
+
+.topNav{
+  flex-basis: 25%;
+}
+
+.navLinks{
+  display: none;
+}
+
+.navIcon{
+  display: contents;
 }
 }
