@@ -127,6 +127,14 @@ ul {
   flex-basis: 15%;
 }
 
+.navLinks{
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .navIcon{
   display: none;
 }
@@ -139,7 +147,6 @@ ul {
 /* ****** HOME ****** */
 .title {
   font-size: 4rem;
-  border: 1px solid blue;
 }
 
 .tagline {
@@ -154,8 +161,8 @@ ul {
 
 .homeLeftSqare img {
   margin-top: 20px;
-  height: 500px;
-  width: 500px;
+  height: 90%;
+  width: 90%;
 }
 
 .photoCredit {
@@ -322,7 +329,7 @@ ul {
 
 @media screen and (max-width: 600px){
 .centerHeader{
-  flex-basis: 50%
+  flex-basis: 70%
 }
 
 .title {
@@ -340,7 +347,11 @@ ul {
 }
 
 .topNav{
-  flex-basis: 25%;
+  flex-basis: 5%;
+  border: none;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 15px 15px 0 0;
 }
 
 .navLinks{
