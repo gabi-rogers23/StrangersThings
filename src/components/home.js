@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 const Home = (props) => {
   const history = useHistory();
   return (
-    <div>
+    <>
       <div className="container">
       <h2>Welcome to Stranger's Things!</h2>
         <div className="homeLeftSqare">
@@ -65,7 +65,7 @@ const Home = (props) => {
           Unsplash
         </a>
       </div>
-    </div>
+    </>
   );
 };
 
