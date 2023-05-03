@@ -55,7 +55,7 @@ const LogIn = (props) => {
       </form>
 
       <div className="logInUserQ">
-        Not already a user? <p />
+        <p>Not already a user? </p>
         <button
           className="logInCreateAccount"
           onClick={(event) => {

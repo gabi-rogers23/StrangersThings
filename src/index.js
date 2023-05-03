@@ -26,7 +26,7 @@ const App = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         <div className="content">
@@ -88,7 +88,7 @@ const App = () => {
           </Switch>
         </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 

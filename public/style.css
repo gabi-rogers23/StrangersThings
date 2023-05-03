@@ -10,6 +10,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 header {
@@ -66,6 +67,7 @@ button:hover {
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 .centerHeader {
@@ -102,6 +104,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  width: 100%;
 }
 
 .container h2{
@@ -116,7 +119,7 @@ ul {
   margin-top: 15px;
   margin-bottom: 15px;
   height: 50px;
-  width: 900px;
+  width: 90%;
   background-color: lightseagreen;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -257,8 +260,11 @@ ul {
 
 /* ****** LOG IN ****** */
 .logInWarning {
-  display: block;
+  text-align: center;
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logInForm {
@@ -276,6 +282,10 @@ ul {
 .logInUserQ {
   margin-top: 100px;
   text-align: center;
+}
+
+.logInUserQ p {
+  margin-bottom: 15px;
 }
 
 /* ****** NEW POST FORM ****** */
@@ -352,12 +362,17 @@ ul {
   }
 } */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 630px){
 header{
-  justify-content: flex-start;
-  justify-content: space-between;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
+.title{
+  font-size: 2.75rem;
+}
 .tagline{
   font-size: 1rem;
 }
@@ -367,15 +382,12 @@ header{
 }
 
 .centerHeader{
-  flex-basis: 90%;
+  width: 90%;
 }
 
 .topNav{
   border: none;
-  flex-basis: 10%;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  padding: 25px 25px 0 0;
+  border-left: 3px solid black;
 }
 
 .navLinks{
