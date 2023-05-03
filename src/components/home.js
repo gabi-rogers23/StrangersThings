@@ -6,25 +6,27 @@ const Home = (props) => {
   return (
     <div>
       <div className="container">
+      <h2>Welcome to Stranger's Things!</h2>
         <div className="homeLeftSqare">
+    
           <img src="/Images/homePageImage.jpg"></img>
         </div>
         <div className="homeRightSide">
-          <p>Welcome to Stranger's Things!</p>
+  
           <img className="cube" src="/Images/cube.png"></img>
           <div className="homeColumn">
-            <b>Buy. Sell. Repeat. </b>
+            <h3>Buy. Sell. Repeat. </h3>
             <p className="homeParagraph">
               Here at Stranger's Things you can buy and sell any item you wish!
             </p>
             <br />
-            To get started: <p />
+            <h4>To get started:</h4>
             {props.isLoggedIn ? (
               <><button onClick={(event) =>{
                 event.preventDefault();
                 history.push("/newPostForm")
               }}>Create Post</button>
-              <p />- or -<p />
+              <p>- or -</p>
               <button onClick={(event) => {
                 event.preventDefault();
                 history.push("/profile")
@@ -39,7 +41,7 @@ const Home = (props) => {
                 >
                   Log In
                 </button>
-                <p />- or -<p />
+                <p>- or -</p>
                 <button
                   onClick={(event) => {
                     event.preventDefault();
