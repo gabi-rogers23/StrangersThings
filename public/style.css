@@ -42,6 +42,13 @@ button:hover {
     rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -2px;
 }
 
+input{
+  margin: 5px;
+  height: 20px;
+  width: 250px;
+  font-size: large;
+}
+
 .logo {
   display: flex;
   flex-flow: row nowrap;
@@ -275,6 +282,14 @@ ul {
   justify-content: space-around;
 }
 
+.logInForm div{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .logInButton {
   margin-top: 15px;
 }
@@ -396,6 +411,10 @@ header{
 
 .navIcon{
   display: contents;
+}
+
+.logInForm div{
+  flex-flow: column nowrap;
 }
 }
 
